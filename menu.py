@@ -11,9 +11,23 @@ def showMenu():
     print("3. Option three")
     print("4. Option four")
     print("5. Exit\n")
-    
-    selection = int(input("Please choose an option (1-5):"))
+
+    def getSelection():
+        selection = input("Please choose an option (1-5):")
+        try:
+            selection = int(selection)
+        except:
+            # Keep asking user a number if the input is not parsible to int
+            selection = getSelection()
+        if selection > 6:
+           selection = getSelection() 
+        else:
+            return selection
+
+    selection = getSelection()
+
     return selection
+
 
 selection = 0
 
