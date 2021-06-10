@@ -18,9 +18,9 @@ def showMenu():
             selection = int(selection)
         except:
             # Keep asking user a number if the input is not parsible to int
-            selection = getSelection()
-        if selection > 6:
-           selection = getSelection() 
+            getSelection()
+        if selection > 5:
+           getSelection() 
         else:
             return selection
 
