@@ -11,6 +11,7 @@
 #     test@@gmail.com
 #     test@gmail..com
 #     test@.com
+#     test@gmail.
 #     test@gmail.com
 #====================
 
@@ -33,7 +34,8 @@ def parseEmail(emailAddress):
     domainAndExtension = emailAddress[AtSymbolLocation+1:]
 
     if domainAndExtension.count(".") > 1 or \
-       domainAndExtension.startswith("."):
+       domainAndExtension.startswith(".") or \
+       domainAndExtension.endswith("."):
         printInvalidWarning()
         return False
 
